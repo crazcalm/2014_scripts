@@ -11,7 +11,7 @@ server.set_debuglevel(1)
 
 server.ehlo()
 server.starttls()
-server.login(raw_input("What is your email address: "),
+server.login(raw_input("What is your Gmail email address: "),
 				 getpass.getpass())
 fromaddr = raw_input("Send mail by the name of: ")
 tolist = raw_input("To: ").split()
