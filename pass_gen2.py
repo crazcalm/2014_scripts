@@ -1,4 +1,4 @@
-""" I need to fix this!!!
+"""Notes:
 
 User choose:
 	1. length of password
@@ -7,7 +7,7 @@ User choose:
 
 import random, string
 
-def password_length(pass_len = 0): # need to test
+def password_length(pass_len = 0):
 	
 	limit = 1000
 
@@ -18,19 +18,19 @@ def password_length(pass_len = 0): # need to test
 
 	if not pass_len.isdigit():
 		print "I do not understand that input.\n"
-		password_length()
+		return password_length()
 
 	else:
 		pass_len = int(pass_len)
 
 	if pass_len <= 5:
 		print "That  number is to small.\nTry again\n"
-		password_length()
+		return password_length()
 
 	elif pass_len >= limit:
 		print "Our password length limit is %s." % (limit)
 		print "Sorry\n"
-		password_length()
+		return password_length()
 
 	return pass_len
 	
@@ -40,7 +40,6 @@ def useable_chars(sample_set = string.printable[:62]):
 	print "Do you want to use special characters in your password?"
 	user = raw_input("Y/N\n").strip()
 	
-	# Need an isinstance to confirm string
 	while not user.lower() == "y" and not user.lower() == "n":
 		print "I do not understand.\nTry again"
 		useable_chars()
@@ -52,16 +51,6 @@ def useable_chars(sample_set = string.printable[:62]):
 		sample_set = string.printable[:62]
 
 	return sample_set
-
-# Need to create "choose the number of digits function"
-def num_of_digits(num = 0):
-
-	result = ""
-	while num > 0:
-		result += random.choice(string.digits)
-		num -=1
-	
-	return result
 
 # Adding the chars to the password
 def password_chars(password, pass_len, sample_set):
@@ -75,12 +64,6 @@ def password_chars(password, pass_len, sample_set):
 
 	password = tempt
 	return password
-	
-
-# Then I need to put it all together.
-
-# Re-read code (I am SUPER tired right now).
-# run 
 
 def main():
 	
