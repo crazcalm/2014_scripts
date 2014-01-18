@@ -1,9 +1,8 @@
-""" I want to let the user choose everything...
+""" I need to fix this!!!
 
 User choose:
 	1. length of password
-	2. number of digits
-	3. option to use special characters in password
+	2. option to use special characters in password
 """
 
 import random, string
